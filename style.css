@@ -23,7 +23,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 30px;
+  padding: 12px 20px;
   max-width: 1200px;
   margin: auto;
 }
@@ -33,11 +33,10 @@ header {
 }
 .header-top h1 {
   margin: 0;
-  font-size: 1.4em;
+  font-size: 1.2em;
   text-align: center;
   flex: 1;
   font-weight: 600;
-  letter-spacing: 0.5px;
 }
 .btn {
   display: inline-block;
@@ -54,6 +53,15 @@ header {
 .btn:hover {
   background: linear-gradient(135deg, #66bb6a, #388e3c);
   transform: translateY(-2px);
+}
+
+/* --- Кнопка гамбургера --- */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 /* --- Навигация --- */
@@ -90,13 +98,13 @@ nav a.active::after {
 
 /* --- Контент --- */
 .page-content {
-  padding-top: 140px;
+  padding-top: 130px;
 }
 
 section {
-  padding: 80px 20px;
+  padding: 70px 20px;
   max-width: 1100px;
-  margin: 40px auto;
+  margin: 30px auto;
   background: #1e1e1e;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
@@ -111,7 +119,7 @@ section.visible {
 section h2 {
   text-align: center;
   margin-bottom: 25px;
-  font-size: 2.2em;
+  font-size: 2em;
   font-weight: 600;
   color: #81c784;
 }
@@ -127,7 +135,7 @@ footer {
   background: #0d0d0d;
   color: #aaa;
   text-align: center;
-  padding: 30px;
+  padding: 25px;
   font-size: 0.9em;
   margin-top: 60px;
   box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
@@ -252,18 +260,30 @@ button:hover {
 /* --- Адаптив --- */
 @media (max-width: 768px) {
   .header-top {
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
     text-align: center;
   }
+  .header-top h1 {
+    font-size: 1em;
+  }
   nav {
+    display: none;
     flex-direction: column;
+    background: #1c1c1c;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+  }
+  nav.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
   }
   section {
-    margin: 20px;
-    padding: 60px 15px;
-  }
-  section h2 {
-    font-size: 1.8em;
+    margin: 15px;
+    padding: 50px 15px;
   }
 }
