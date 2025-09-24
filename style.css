@@ -55,14 +55,42 @@ header {
   transform: translateY(-2px);
 }
 
-/* --- Кнопка гамбургера --- */
+/* Кнопка гамбургера */
 .menu-toggle {
   display: none;
   font-size: 28px;
   color: white;
   cursor: pointer;
-  margin-left: 10px;
+  padding: 12px 20px;
 }
+
+/* На мобильных */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #1c1c1c;
+    position: absolute;
+    top: 100%; /* теперь меню уходит ниже шапки */
+    left: 0;
+    width: 100%;
+  }
+  nav.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .header-top {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .header-top h1 {
+    font-size: 1em;
+    text-align: left;
+  }
+}
+
 
 /* --- Навигация --- */
 nav {

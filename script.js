@@ -92,3 +92,12 @@ const navbar = document.getElementById("navbar");
 menuToggle.addEventListener("click", () => {
   navbar.classList.toggle("show");
 });
+
+// Закрывать меню при выборе пункта (на мобильных)
+const mobileLinks = document.querySelectorAll("#navbar a");
+mobileLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navbar.classList.remove("show");
+  });
+});
+
