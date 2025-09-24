@@ -4,9 +4,7 @@ function revealSections() {
   const triggerBottom = window.innerHeight * 0.85;
   sections.forEach(section => {
     const boxTop = section.getBoundingClientRect().top;
-    if (boxTop < triggerBottom) {
-      section.classList.add("visible");
-    }
+    if (boxTop < triggerBottom) section.classList.add("visible");
   });
 }
 window.addEventListener("scroll", revealSections);
@@ -76,28 +74,20 @@ form.addEventListener("submit", async function(event) {
 // Кнопка "Наверх"
 const toTopBtn = document.getElementById("toTop");
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 400) {
-    toTopBtn.style.display = "flex";
-  } else {
-    toTopBtn.style.display = "none";
-  }
+  toTopBtn.style.display = window.scrollY > 400 ? "flex" : "none";
 });
 toTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
 // Гамбургер-меню
 const menuToggle = document.getElementById("menu-toggle");
 const navbar = document.getElementById("navbar");
-
 menuToggle.addEventListener("click", () => {
   navbar.classList.toggle("show");
 });
 
 // Закрывать меню при выборе пункта (на мобильных)
-const mobileLinks = document.querySelectorAll("#navbar a");
-mobileLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    navbar.classList.remove("show");
-  });
+document.querySelectorAll("#navbar a").forEach(link => {
+  link.addEventListener("click", () => navbar.classList.remove("show"));
 });
-

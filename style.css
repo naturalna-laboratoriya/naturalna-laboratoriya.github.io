@@ -39,6 +39,10 @@ header {
   flex: 1;
   font-weight: 600;
 }
+.header-top small {
+  font-size: 0.75em;
+  color: #ccc;
+}
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -258,9 +262,26 @@ button:hover {
   transform: translateY(-3px);
 }
 
-/* ==================  АДАПТАЦИЯ  ================== */
+/* --- Логотипы в разделе Поддержка --- */
+.support-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.support-logos a img {
+  max-height: 80px;
+  width: auto;
+  filter: grayscale(20%);
+  transition: transform 0.3s, filter 0.3s;
+}
+.support-logos a img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
 
-/* Планшеты и телефоны до 768px */
+/* ==================  АДАПТАЦИЯ  ================== */
 @media (max-width: 768px) {
   .header-top {
     flex-wrap: wrap;
@@ -268,18 +289,9 @@ button:hover {
     gap: 10px;
     padding: 10px 15px;
   }
-  .header-top img {
-    max-height: 40px;
-  }
-  .header-top h1 {
-    font-size: 1em;
-    flex: 0 0 100%;
-    text-align: center;
-  }
-  .btn {
-    padding: 8px 16px;
-    font-size: 0.9em;
-  }
+  .header-top img { max-height: 40px; }
+  .header-top h1 { font-size: 1em; flex: 0 0 100%; text-align: center; }
+  .btn { padding: 8px 16px; font-size: 0.9em; }
   nav {
     display: none;
     flex-direction: column;
@@ -289,48 +301,20 @@ button:hover {
     left: 0;
     width: 100%;
   }
-  nav.show {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-  }
-  section {
-    margin: 20px 10px;
-    padding: 50px 15px;
-  }
-  section h2 {
-    font-size: 1.6em;
-  }
-  section p {
-    font-size: 1em;
-    max-width: 95%;
-  }
+  nav.show { display: flex; }
+  .menu-toggle { display: block; }
+  section { margin: 20px 10px; padding: 50px 15px; }
+  section h2 { font-size: 1.6em; }
+  section p { font-size: 1em; max-width: 95%; }
 }
 
-/* Очень узкие экраны до 480px */
 @media (max-width: 480px) {
-  .header-top img {
-    max-height: 35px;
-  }
-  .header-top h1 {
-    font-size: 0.9em;
-  }
-  .btn {
-    padding: 6px 14px;
-    font-size: 0.85em;
-  }
-  section h2 {
-    font-size: 1.4em;
-  }
-  section p {
-    font-size: 0.95em;
-  }
-  #toTop {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    bottom: 20px;
-    right: 20px;
-  }
+  .header-top img { max-height: 35px; }
+  .header-top h1 { font-size: 0.9em; }
+  .btn { padding: 6px 14px; font-size: 0.85em; }
+  section h2 { font-size: 1.4em; }
+  section p { font-size: 0.95em; }
+  #toTop { width: 45px; height: 45px; font-size: 20px; bottom: 20px; right: 20px; }
+  .support-logos { gap: 20px; }
+  .support-logos a img { max-height: 60px; }
 }

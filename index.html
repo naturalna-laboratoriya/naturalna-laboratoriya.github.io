@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ООО "Натуральна Лаборатория"</title>
+  <title>ООО Натуральна Лаборатория</title>
+  <meta name="description" content="ООО Натуральна Лаборатория – разработка рецептур и технологий продуктов питания, техническая документация, стандартизация, молочные, рыбные и мясные продукты.">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
   <!-- Шапка -->
   <header>
     <div class="header-top">
       <a href="#top"><img src="logo.png" alt="Логотип"></a>
-      <h1>ООО "Натуральна Лаборатория"</h1>
+      <h1>
+        ООО Натуральна Лаборатория<br>
+        <small>Разработка рецептур и технологий продуктов питания</small>
+      </h1>
       <span class="btn" id="openModal">Заказать звонок</span>
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     </div>
     <nav id="navbar">
       <a href="#about">О нас</a>
       <a href="#services">Услуги</a>
+      <a href="#products">Технические условия</a>
       <a href="#contacts">Контакты</a>
       <a href="#support">Поддержка</a>
     </nav>
@@ -26,28 +32,72 @@
   <div class="page-content" id="top">
     <section id="about">
       <h2>О нас</h2>
-      <p>Здесь будет краткая информация о компании: история, миссия, ценности и направления деятельности.</p>
+      <p>
+        ООО Натуральна Лаборатория специализируется на разработке рецептур и технологий
+        продуктов питания – молочных, рыбных и мясных – с заданным составом и свойствами.
+        Мы разрабатываем также функциональные продукты с использованием исключительно отечественного
+        сырья и материалов, разрабатываем документы по стандартизации и техническую документацию.
+      </p>
     </section>
 
     <section id="services">
       <h2>Наши услуги</h2>
-      <p>Опишите основные направления работы: продукция, сервисы, уникальные преимущества.</p>
+      <p>
+        • Разработка рецептур и технологий молочных, рыбных и мясных продуктов питания.<br>
+        • Создание функциональных продуктов с повышенной пищевой ценностью.<br>
+        • Подготовка документов по стандартизации и технической документации.<br>
+        • Сопровождение испытаний и сертификации.
+      </p>
+    </section>
+
+    <section id="products">
+      <h2>Технические условия</h2>
+      <p>
+        ТУ 10.51.56.153-005-00493250–2025<br>
+        «Творожные продукты с повышенным содержанием белка,
+        обогащенные фолиевой кислотой». 45000 руб.
+      </p>
+      <p>
+        В наш продукт включены только натуральные ингредиенты,
+        без добавления каких-либо красителей и консервантов,
+        а также продукт обладает высоким содержанием белка.
+      </p>
+      <!-- Кнопка для открытия формы -->
+      <div style="text-align:center; margin-top:20px;">
+        <span class="btn" id="orderProduct">Сделать заказ</span>
+      </div>
     </section>
 
     <section id="contacts">
       <h2>Контакты</h2>
-      <p><b>Адрес:</b> Укажите адрес компании</p>
-      <p><b>Телефон:</b> +7 (XXX) XXX-XX-XX</p>
-      <p><b>Email:</b> info@example.com</p>
+      <p><b>Адрес:</b> 160032, Вологодская область, г Вологда, Технический пер, д. 52, кв. 43 </p>
+      <p><b>Email:</b> naturalab@mail.ru</p>
+      <p><b>О компании:</b>
+        <a href="https://focus.kontur.ru/entity?query=1243500011501" target="_blank">
+          ООО Натуральна Лаборатория на Rusprofile
+        </a>
+      </p>
     </section>
 
     <section id="support">
       <h2>Поддержка</h2>
-      <p>Проект реализован при грантовой поддержке Фонда содействия инновациям, предоставленного в рамках программы "Студенческий стартап".</p>
+      <p>
+        Проект реализован при грантовой поддержке Фонда содействия инновациям,
+        предоставленного в рамках программы «Студенческий стартап» федерального
+        проекта "Платформа университетского технологического предпринимательства".
+      </p>
+      <div class="support-logos">
+        <a href="https://univertechpred.ru/" target="_blank" rel="noopener">
+          <img src="logo_univertechpred.svg" alt="Универтехпред">
+        </a>
+        <a href="https://fasie.ru/" target="_blank" rel="noopener">
+          <img src="logo_fasie.png" alt="Фонд содействия инновациям">
+        </a>
+      </div>
     </section>
 
     <footer>
-      <p>&copy; 2025 ООО "Натуральна Лаборатория". Все права защищены.</p>
+      <p>&copy; 2025 ООО Натуральна Лаборатория. Все права защищены.</p>
     </footer>
   </div>
 
@@ -56,7 +106,7 @@
     <div class="modal-content">
       <span class="close" id="closeModal">&times;</span>
       <h3 style="text-align:center;">Форма обратной связи</h3>
-      <form id="contact-form" action="https://formspree.io/f/abcd1234" method="POST">
+      <form id="contact-form" action="https://formspree.io/f/mblzjeqo" method="POST">
         <input type="text" name="Имя" placeholder="Ваше имя" required>
         <input type="tel" name="Телефон" placeholder="Телефон" required>
         <textarea name="Сообщение" rows="4" placeholder="Комментарий"></textarea>
@@ -70,5 +120,16 @@
   <button id="toTop">&#8679;</button>
 
   <script src="script.js"></script>
+  <script>
+    // чтобы кнопка «Сделать заказ» открывала ту же форму
+    document.addEventListener('DOMContentLoaded', () => {
+      const orderBtn = document.getElementById('orderProduct');
+      const modal = document.getElementById('modalForm');
+      orderBtn.addEventListener('click', () => {
+        modal.classList.add('show');
+        document.body.classList.add('modal-open');
+      });
+    });
+  </script>
 </body>
 </html>
