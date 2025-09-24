@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ООО "Натуральна Лаборатория"</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Шапка -->
+  <header>
+    <div class="header-top">
+      <a href="#top"><img src="https://via.placeholder.com/120x40" alt="Логотип"></a>
+      <h1>ООО "Натуральна Лаборатория"</h1>
+      <span class="btn" id="openModal">Заказать звонок</span>
+    </div>
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#services">Услуги</a>
+      <a href="#contacts">Контакты</a>
+      <a href="#support">Поддержка</a>
+    </nav>
+  </header>
+
+  <div class="page-content" id="top">
+    <section id="about">
+      <h2>О нас</h2>
+      <p>Здесь будет краткая информация о компании: история, миссия, ценности и направления деятельности.</p>
+    </section>
+
+    <section id="services">
+      <h2>Наши услуги</h2>
+      <p>Опишите основные направления работы: продукция, сервисы, уникальные преимущества.</p>
+    </section>
+
+    <section id="contacts">
+      <h2>Контакты</h2>
+      <p><b>Адрес:</b> Укажите адрес компании</p>
+      <p><b>Телефон:</b> +7 (XXX) XXX-XX-XX</p>
+      <p><b>Email:</b> info@example.com</p>
+    </section>
+
+    <section id="support">
+      <h2>Поддержка</h2>
+      <p>Проект реализован при грантовой поддержке Фонда содействия инновациям, предоставленного в рамках программы "Студенческий стартап".</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 ООО "Натуральна Лаборатория". Все права защищены.</p>
+    </footer>
+  </div>
+
+  <!-- Модальное окно -->
+  <div class="modal" id="modalForm">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h3 style="text-align:center;">Форма обратной связи</h3>
+      <form id="contact-form" action="https://formspree.io/f/abcd1234" method="POST">
+        <input type="text" name="Имя" placeholder="Ваше имя" required>
+        <input type="tel" name="Телефон" placeholder="Телефон" required>
+        <textarea name="Сообщение" rows="4" placeholder="Комментарий"></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+      <p id="form-status"></p>
+    </div>
+  </div>
+
+  <!-- Кнопка "Наверх" -->
+  <button id="toTop">&#8679;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

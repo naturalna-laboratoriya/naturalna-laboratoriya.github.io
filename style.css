@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #e0e0e0;
+  background: #121212;
+  scroll-behavior: smooth;
+}
+
+/* --- Шапка --- */
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  background: rgba(34, 34, 34, 0.9);
+  backdrop-filter: blur(8px);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+.header-top img {
+  max-height: 45px;
+  cursor: pointer;
+}
+.header-top h1 {
+  margin: 0;
+  font-size: 1.4em;
+  text-align: center;
+  flex: 1;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.btn:hover {
+  background: linear-gradient(135deg, #66bb6a, #388e3c);
+  transform: translateY(-2px);
+}
+
+/* --- Навигация --- */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #1c1c1c;
+}
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  padding: 14px 22px;
+  display: block;
+  font-weight: 500;
+  transition: 0.3s;
+  position: relative;
+}
+nav a:hover {
+  color: #81c784;
+}
+nav a.active {
+  color: #81c784;
+}
+nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 6px;
+  width: 100%;
+  height: 2px;
+  background: #81c784;
+  border-radius: 2px;
+}
+
+/* --- Контент --- */
+.page-content {
+  padding-top: 140px;
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #1e1e1e;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+section h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.2em;
+  font-weight: 600;
+  color: #81c784;
+}
+section p {
+  font-size: 1.1em;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* --- Подвал --- */
+footer {
+  background: #0d0d0d;
+  color: #aaa;
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9em;
+  margin-top: 60px;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* --- Модальное окно --- */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.modal.show {
+  display: flex;
+  opacity: 1;
+}
+.modal-content {
+  background: #1e1e1e;
+  padding: 35px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 480px;
+  position: relative;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: #eee;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+}
+.modal.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #bbb;
+  transition: 0.3s;
+}
+.close:hover {
+  color: #fff;
+}
+
+/* --- Форма --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+input, textarea {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  width: 100%;
+  background: #2b2b2b;
+  color: #eee;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.4);
+}
+input::placeholder, textarea::placeholder {
+  color: #999;
+}
+button {
+  padding: 14px;
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+button:hover {
+  background: linear-gradient(135deg, #66bb6a, #388e3c);
+  transform: translateY(-2px);
+}
+#form-status {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  display: none;
+}
+#form-status.success { color: #81c784; }
+#form-status.error { color: #e57373; }
+
+/* --- Кнопка "Наверх" --- */
+#toTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1500;
+}
+#toTop:hover {
+  background: linear-gradient(135deg, #66bb6a, #388e3c);
+  transform: translateY(-3px);
+}
+
+/* --- Адаптив --- */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  nav {
+    flex-direction: column;
+  }
+  section {
+    margin: 20px;
+    padding: 60px 15px;
+  }
+  section h2 {
+    font-size: 1.8em;
+  }
+}
